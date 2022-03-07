@@ -11,25 +11,25 @@ A web server written in GoLang, which is used to confirm http requests.
 Clone the project
 
 ```bash
-  git clone https://github.com/enforcer-GH/Requiver.git
+git clone https://github.com/enforcer-GH/Requiver.git
 ```
 
 switch into the Project Directory
 
 ```bash
-  cd goRequiver
+cd goRequiver
 ```
 
 Install dependencies
 
 ```bash
-  sudo apt install golang
+sudo apt install golang
 ```
 
 Start the server
 
 ```bash
-  ./requive 
+./requive 
 ```
 
 
