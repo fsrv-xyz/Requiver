@@ -38,3 +38,10 @@ Start the server
 | Parameter | Type     | Description                |
 | :-------- | :------- | :------------------------- |
 | `-web.listen-address` | `string` | **Default**: :8080 |
+
+| Endpoint | Description                |
+| :-------- | :------------------------- |
+| `/ping` | used to add client IP Address |
+| `/status` | shows all stored IP Addresses |
+| `/ack/<specific_ip>` | removes an specific IP Address |
+| `/flush` | removes all stored IP Addresses |
