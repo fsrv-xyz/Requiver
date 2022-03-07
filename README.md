@@ -11,7 +11,7 @@ A web server written in GoLang, which is used to confirm http requests.
 Clone the project
 
 ```bash
-  git clone https://github.com/enforcer-GH/goRequiver.git
+  git clone https://github.com/enforcer-GH/Requiver.git
 ```
 
 switch into the Project Directory
