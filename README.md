@@ -39,6 +39,8 @@ Start the server
 | :-------- | :------- | :------------------------- |
 | `-web.listen-address` | `string` | **Default**: :8080 |
 
+## Endpoints
+
 | Endpoint | Description                |
 | :-------- | :------------------------- |
 | `/ping` | used to add client IP Address |
