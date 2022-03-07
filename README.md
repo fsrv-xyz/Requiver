@@ -17,7 +17,7 @@ git clone https://github.com/enforcer-GH/Requiver.git
 switch into the Project Directory
 
 ```bash
-cd goRequiver
+cd Requiver/
 ```
 
 Install dependencies
