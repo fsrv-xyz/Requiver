@@ -20,12 +20,6 @@ switch into the Project Directory
 cd Requiver/
 ```
 
-Install dependencies
-
-```bash
-sudo apt install golang
-```
-
 Start the server
 
 ```bash
