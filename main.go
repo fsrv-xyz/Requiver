@@ -23,7 +23,7 @@ func main() {
 	http.HandleFunc("/ack/", LoggingMiddleware(Ack))
 	http.HandleFunc("/flush", LoggingMiddleware(Flush))
 
-	err := http.ListenAndServe(":8090", nil)
+	err := http.ListenAndServe(":8080", nil)
 	if err != nil {
 		return
 	}
