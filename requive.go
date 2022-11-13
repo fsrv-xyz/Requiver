@@ -2,12 +2,13 @@ package main
 
 import (
 	"encoding/json"
-	"golang.fsrv.services/jsonstatus"
+	"fmt"
 	"log"
 	"net"
 	"net/http"
-	"fmt"
 	"time"
+
+	"github.com/bonsai-oss/jsonstatus"
 )
 
 // PingHandler Add IP Addresses and the Time to an array (pinged)
@@ -20,11 +21,11 @@ func PingHandler(w http.ResponseWriter, r *http.Request) {
 	test := Address{IP: ip, Time: currentTime.String()}
 	for i := 0; i < len(pinged); i++ {
 		if pinged[i].IP == test.IP {
-			jsonstatus.Status{Message: "Address already stored!", StatusCode: http.StatusNotAcceptable}.Encode(w)
+			jsonstatus.Status{Message: "Address already stored!", Code: http.StatusNotAcceptable}.Encode(w)
 			return
 		}
 	}
-	jsonstatus.Status{Message: "IP Address added.", StatusCode: http.StatusOK}.Encode(w)
+	jsonstatus.Status{Message: "IP Address added.", Code: http.StatusOK}.Encode(w)
 	addAddress(ip, currentTime.Format(time.RFC3339))
 }
 
@@ -36,20 +37,20 @@ func Ack(w http.ResponseWriter, r *http.Request) {
 			a := append(pinged[:i], pinged[i+1:]...)
 			pinged = nil
 			pinged = a
-			jsonstatus.Status{Message: fmt.Sprintf("%v deleted", addr), StatusCode: http.StatusOK}.Encode(w)
+			jsonstatus.Status{Message: fmt.Sprintf("%v deleted", addr), Code: http.StatusOK}.Encode(w)
 			return
 		}
 	}
-	jsonstatus.Status{Message: fmt.Sprintf("%v not Found", addr), StatusCode: http.StatusNotAcceptable}.Encode(w)
+	jsonstatus.Status{Message: fmt.Sprintf("%v not Found", addr), Code: http.StatusNotAcceptable}.Encode(w)
 }
 
 // Flush Remove all IPAddresses from the Array (pinged)
 func Flush(w http.ResponseWriter, _ *http.Request) {
 	if pinged != nil {
 		pinged = nil
-		jsonstatus.Status{Message: "Everything Deleted", StatusCode: http.StatusOK}.Encode(w)
+		jsonstatus.Status{Message: "Everything Deleted", Code: http.StatusOK}.Encode(w)
 	} else {
-		jsonstatus.Status{Message: "No Addresses stored", StatusCode: http.StatusNotAcceptable}.Encode(w)
+		jsonstatus.Status{Message: "No Addresses stored", Code: http.StatusNotAcceptable}.Encode(w)
 	}
 
 }
@@ -63,6 +64,6 @@ func Status(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 	} else {
-		jsonstatus.Status{Message: "No Address stored", StatusCode: http.StatusNotAcceptable}.Encode(w)
+		jsonstatus.Status{Message: "No Address stored", Code: http.StatusNotAcceptable}.Encode(w)
 	}
 }
