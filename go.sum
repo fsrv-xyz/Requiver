@@ -1,2 +1,2 @@
-golang.fsrv.services/jsonstatus v0.0.0-20220214085837-69f669b302e4 h1:m1feM0FYowNcSkF57dwvc3rQcNsss5dQ0kBHAnaxfFc=
-golang.fsrv.services/jsonstatus v0.0.0-20220214085837-69f669b302e4/go.mod h1:1rVqrmLK+QF8DpHqJ7SulzdqKMoMThuBJL4zRO1UiZY=
+github.com/bonsai-oss/jsonstatus v0.1.0 h1:fDk5uSFqbYSXTGVnhHi/7ySxWC2f/ve0Hv7TLX17aBQ=
+github.com/bonsai-oss/jsonstatus v0.1.0/go.mod h1:sIx5rcYmYKPtUIWEF7L4C+fGBk9wa646UPFZChQX340=
